@@ -24,3 +24,20 @@ $$ \ddot{\theta} = -g sin(\theta) $$
 ## Forma 3
 
 $$ \ddot{\theta} = -g sin(\theta) $$
+
+## Péndulo simple
+
+Antes de estudiar el péndulo doble comencemos por estudiar el péndulo simple. El péndulo simple consiste en un punto de masa fijado a una estructura por medio de una vara. Denotamos por $\theta$ el ángulo formado entre la vara y el eje vertical. Para simplificar las cuentas, supongamos que el largo de la vara es 1 y la masa del objeto también es 1. Supongamos que podemos ignorar la masa de la vara y en un principio también la fricción (después incluiremos la fricción). Entonces la única fuerza que actúa sobre el objeto es la gravedad, por lo que la aceleración del ángulo $\theta$ es proporcional a $sin(\theta)$. Podemos representar el sistema por medio de la siguiente ecuación:
+
+```{=tex}
+\begin{math}
+\ddot{\theta} = -g sin(\theta)
+\end{math}
+```
+Añadiendo una variable para la velocidad $v = \dot{\theta}$ reescribimos el sistema como:
+```{=tex}
+\begin{math}
+\dot{\theta} = v
+\dot{v} = -g sin(\theta)
+\end{math}
+```
