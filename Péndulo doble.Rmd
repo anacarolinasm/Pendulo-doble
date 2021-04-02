@@ -1,0 +1,26 @@
+---
+title: "Péndulo doble"
+author: ''
+date: "4/1/2021"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Forma 1
+
+$$ \ddot{\theta} = -g sin(\theta) $$
+
+## Forma 2
+
+```{=tex}
+\begin{math}
+\ddot{\theta} = -g sin(\theta)
+\end{math}
+```
+## Forma 3
+
+$$ \ddot{\theta} = -g sin(\theta) $$
