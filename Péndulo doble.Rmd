@@ -1,6 +1,7 @@
 ---
 title: "Péndulo doble"
-author: ''
+subtitle: "Trabajo de Investigación - Sistemas Dinámicos II"
+author: 'Ana Carolina Sandoval Mejía 152808'
 date: "4/1/2021"
 output:
   pdf_document: default
