@@ -10,8 +10,7 @@ output:
     highlight: github
     math: katex
     number_sections: True
-fig_caption: True
-
+    fig_caption: True
 header_includes: \userpackage{lmodern}
 ---
 
@@ -114,24 +113,55 @@ $$
 \text{centros} & \text{si}\ k \text{ par} \\
 \text{silla} & \text{si}\ k \text{ impar}
 \end{cases}
+\ k \in\mathbb{Z}
 $$
+
 
 
 ## Péndulo con fricción
 
+Ya que conocemos cómo se comporta el péndulo ideal, ahora podemos comenzar a tomar en la fuerza de fricción. Dicha fuerza es proporcional a la velocidad de la partícula y es negativa porque se opone al movimiento. 
 
-Ahora vamos a empezar a tomar en cuenta la fricción. Supongamos que ésta es proporcional a la velocidad $\omega$. Tenemos que agregar un término a la ecuación de $\dot{\omega}$ de la forma $-b \omega$ con $b$ una constante positiva. El sistema resultante es:
+$$
+F_f=-bl\frac{d\theta}{dt}=-bl\dot{\theta} \quad b>0
+$$
+Siguiendo nuevamente la Segunda Ley de Newton:
+$$
+\underbrace{m}_{m} \underbrace{l\ddot{\theta}}_{a} = \underbrace{\underbrace{-mg\sin({\theta})}_{F_m}\underbrace{-bl\dot{\theta}}_{F_f}}_{F}
+$$
+Simplificando y manteniendo los supuestos de $l=1$ y $m=1$:
+
+$$
+\ddot{\theta} = -\frac{g}{l}\sin{(\theta)} -\frac{b}{m}\dot{\theta} 
+              = -g\sin{\theta}-b\dot{\theta}
+$$
+Reescribiendo como un sistema aplicando la sustitución para la velocidad angular $\omega=\dot{\theta}$ obtenemos:
 
 $$
 \begin{aligned}
-\dot{\theta} & = \omega \\
-\dot{\omega} & = -b \, \omega - g \sin(\theta)
+\dot{\theta} &= \omega \\
+\dot{\omega} &= -b \, \omega - g \sin(\theta)
 \end{aligned}
 $$
 
-Los puntos de equilibrio son donde $\omega = 0$ y $\sin(\theta) = 0$. Es decir, son los puntos de la forma $(\theta, \omega) = (k \pi, 0) \; con \; k \in \mathbb{Z}$ (siguen siendo los mismos de antes).
+Debido a que ya tenemos otra fuerza que va en contra del movimiento entonces el péndulo se detiene en algún momento.
 
-Vamos a analizar el comportamiento cerca de los puntos de equilibrio utilizando la Jacobiana del sistema (y el teorema de Hartman--Grobman).
+<center>
+![Péndulo con fricción](Anim/péndulo-fricción.gif){height=300px}
+</center>
+
+Obtenemos los puntos de equilibrio:
+
+$$
+\begin{aligned}
+\dot{\theta} &= 0 \iff \omega=0  \\
+\dot{\omega} &= 0 \iff -b \, \omega - g \sin(\theta) = 0
+\end{aligned}
+$$
+
+Los puntos de equilibrio están dados por $(\theta,\omega)=(k\pi,0)$ con $k \in \mathbb{Z}$. Notemos que son exactamente los mismos que para el péndulo ideal.
+
+Vamos a analizar el comportamiento cerca de los puntos de equilibrio utilizando la Jacobiana del sistema en cualquier punto $(\theta,\omega)$ y el Teorema de Hartman-Grobman.
 
 $$
 Df(\theta, \omega) = \begin{pmatrix}
@@ -140,7 +170,7 @@ Df(\theta, \omega) = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-Para los puntos de equilibrio con un múltiplo par de $\pi$ tenemos:
+- Para los puntos de equilibrio con un múltiplo par de $\pi$ tenemos:
 
 $$
 Df(2k\pi, 0) = \begin{pmatrix}
@@ -149,7 +179,7 @@ Df(2k\pi, 0) = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-Su polinomio característico y valores propios:
+Calculamos el polinomio característico y sus valores propios:
 
 $$
 \begin{aligned}
@@ -157,10 +187,24 @@ $$
     p(\lambda) & = 0 \iff \lambda = \frac{-b \pm \sqrt{b^2-4g}}{2}
 \end{aligned}
 $$
+De esta manera, los valores propios de los puntos de equilibrio pares de la forma $(2k\pi, 0)$ dependen del signo del discriminante $D=b^2-4g$, es decir, de la relación entre el coeficiente de fricción y la gravedad.
 
-Dependiendo del signo de $b^2-4g$ vamos a tener valores propios reales o complejos. Si asumimos que la fuerza de fricción no es demasiado fuerte y por lo tanto la constante $b$ no es muy grande, vamos a tener doe valores propios complejos con parte real negativa, por lo que el equilibrio va a ser espiral estable.
+$$
+\lambda_{1,2} =
+\begin{cases}
+\lambda_{1,2}<0 &si\ D>0\\
+\lambda_1=\lambda_2<0 &si\ D=0\\
+\text{Real}(\lambda_{1,2})<0 &si\ D<0
+\end{cases}
+ =
+\begin{cases}
+\text{sumidero} &si\ D>0\\
+\text{nodo estable} &si\ D=0\\
+\text{espiral estable} &si\ D<0
+\end{cases}
+$$
 
-Para los puntos de equilibrio que son un múltiplo impar de $\pi$ tenemos:
+- Para los puntos de equilibrio que son un múltiplo impar de $\pi$ tenemos:
 
 $$
 Df((2k+1)\pi, 0) = \begin{pmatrix}
@@ -169,7 +213,7 @@ g  & -b
 \end{pmatrix}
 $$
 
-Su polinomio característico y valores propios:
+Calculamos el polinomio característico y sus valores propios:
 
 $$
 \begin{aligned}
@@ -178,7 +222,7 @@ $$
 \end{aligned}
 $$
 
-Podemos ver que ambos valores propios son reales, uno positivo y uno negativo, por lo tanto tenemos un punto silla.
+Podemos ver que ambos valores propios son reales, uno positivo y uno negativo, por lo tanto tenemos un punto silla en los múltiplos impares de $\pi$.
 
 Para esbozar el retrato fase utilizaremos las ceroclinas.
 
@@ -189,30 +233,19 @@ $$
 \end{aligned}
 $$
 
-```{=html}
-<!--
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.7]{ceroclinas_pendulo_simple_con_friccion.png}
-\caption{Fuente: Blanchard et al.}
-\label{fig:ceroclinas_friccion}
-\end{figure}
--->
-```
-Utilizando la información que tenemos hasta ahora podemos esbozar el retrato fase:
+center>
+![Blanchard](Img/Ceroclinas-fricción.jpg){height=300px}
+</center>
 
-```{=html}
-<!--
-\begin{figure}[!hb]
-\centering
-\includegraphics[scale=0.5]{retrato_fase_pendulo_con_friccion.png}
-\caption{Fuente: Blanchard et al.}
-\label{fig:fase_pendulo_friccion}
-\end{figure}
-\clearpage
--->
-```
-Como podemos ver, el retrato fase es parecido al del péndulo sin fricción. La principal diferencia es que ahora hay espirales en lugar de las órbitas periódicas de antes. Esto se debe a que, debido a la frición, el péndulo ya no oscila indefinidamente, sino que cada vez la trayectoria es más corta y se va acercando poco a poco a la posición de equilibrio en la que el péndulo cuelga hacia abajo sin moverse (puntos de la forma $(\theta, \omega) = (2k\pi, 0)$).
+
+Utilizando la información que obtuvimos de los puntos de equilibrio y las ceroclinas podemos esbozar el retrato fase:
+
+center>
+![Blanchard](Img/Retrato-fricción.jpg){height=300px}
+</center>
+
+Como podemos ver, el retrato fase es sumamente parecido al del péndulo sin fricción. La principal diferencia es que ahora hay espirales en lugar de las órbitas periódicas del péndulo ideal. Esto se debe a que, debido a la fricción, el péndulo ya no oscila indefinidamente, sino que cada vez la trayectoria es más corta y se va acercando poco a poco a la posición de equilibrio en la que el péndulo cuelga hacia abajo sin moverse (puntos de la forma $(\theta, \omega) = (2k\pi, 0)$).
+
 
 # Péndulo doble
 
