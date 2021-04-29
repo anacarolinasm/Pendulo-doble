@@ -1,7 +1,9 @@
 ---
 title: "Péndulo doble"
-subtitle: ""
-author: ''
+subtitle: "Sistemas Dinámicos II"
+author: 
+  - Cabasso Kassin Eliahu - 
+  - Lango Baltazar Fernando - 181055
 date: "`r format(Sys.time(), '%d/%m/%Y')`"
 output:
   #rmdformats::material
@@ -11,13 +13,15 @@ output:
     math: katex
     number_sections: True
     fig_caption: True
-header_includes: \userpackage{lmodern}
+    toc: True 
+    self_contained: False
+toc-title: Contenido     
 bibliography: citations.bib
 csl: apa.csl 
 nocite: '@*'
 ---
 
-```{r setup, include=FALSE, fig.align="center"}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -40,8 +44,11 @@ Podemos observar este péndulo en la *Figure 1*, el cual se compone de:
     - $g$ como la aceleración de gravedad ($g = 9.8 \ m/s^2$ en la Tierra).
 
 <center>
+
 ![Boyce](Img/péndulo-ideal.jpg){height=300px}
+
 </center>
+
 
 Recordemos que solamente actúa externamente la fuerza de gravedad porque estamos asumiendo que no existe la fuerza de fricción. Como la masa se mueve alrededor de un círculo de radio $l$, entonces podemos definir las siguientes magnitudes:
 
@@ -73,7 +80,9 @@ $$
 Bajo los supuestos que utilizamos, ¡nuestro péndulo nunca se detiene!
 
 <center>
+
 ![Péndulo ideal](Anim/péndulo-ideal.gif){height=300px}
+
 </center>
 
 Podemos notar fácilmente que los puntos de equilibrio son de la forma $(\theta,\omega)=(k\pi,0)$ con $k \in \mathbb{Z}$ y ocurren cuando el péndulo se encuentra completamente vertical. 
@@ -92,7 +101,9 @@ $$
 De igual manera, podemos analizar gráficamente cómo se comporta la energía potencial a lo largo del tiempo:
 
 <center>
+
 ![Potencial del péndulo ideal](Anim/potencial-ideal.gif){height=300px}
+
 </center>
 
 
@@ -105,7 +116,9 @@ $$
 Si graficamos para cada nivel de energía podemos esbozar el retrato fase:
 
 <center>
+
 ![Boyce](Img/Potencial-retrato-ideal.jpg){height=300px}
+
 </center>
 
 De esta manera podemos concluir que los puntos de equilibrio tienen estabilidad:
@@ -150,7 +163,9 @@ $$
 Debido a que ya tenemos otra fuerza que va en contra del movimiento entonces el péndulo se detiene en algún momento.
 
 <center>
+
 ![Péndulo con fricción](Anim/péndulo-fricción.gif){height=300px}
+
 </center>
 
 Obtenemos los puntos de equilibrio:
@@ -237,14 +252,18 @@ $$
 $$
 
 <center>
+
 ![Blanchard](Img/Ceroclinas-fricción.jpg){height=300px}
+
 </center>
 
 
 Utilizando la información que obtuvimos de los puntos de equilibrio y las ceroclinas podemos esbozar el retrato fase:
 
 <center>
+
 ![Blanchard](Img/Retrato-fricción.jpg){height=300px}
+
 </center>
 
 Como podemos ver, el retrato fase es sumamente parecido al del péndulo sin fricción. La principal diferencia es que ahora hay espirales en lugar de las órbitas periódicas del péndulo ideal. Esto se debe a que, debido a la fricción, el péndulo ya no oscila indefinidamente, sino que cada vez la trayectoria es más corta y se va acercando poco a poco a la posición de equilibrio en la que el péndulo cuelga hacia abajo sin moverse (puntos de la forma $(\theta, \omega) = (2k\pi, 0)$).
@@ -255,7 +274,9 @@ Como podemos ver, el retrato fase es sumamente parecido al del péndulo sin fric
 Consideremos ahora un péndulo que está unido a otro péndulo. Tenemos una masa $m_1$ unida por un una vara de longitud $l_1$ que, a su vez, tiene otra masa $m_2$ unida por medio de una vara de longitud $l_2$. Sean $\theta_1$ y $\theta_2$ los ángulos que forman cada una de estas varas con el eje vertical (ver figura).
 
 <center>
+
 ![Wiggins](Img/Péndulo-doble.jpg){height=300px}
+
 </center>
 
 Las coordenadas $(x_1,y_1)$ y $(x_2,y_2)$ nos indican la ubicación de las masas $m_1$ y $m_2$ respectivamente. De la siguiente manera podremos dar ecuaciones para localizar cada una de estas coordenadas de cada una de las masas:
@@ -270,7 +291,9 @@ $$
 $$
 
 <center>
+
 ![Péndulo doble](Anim/péndulo-doble.gif){height=300px}
+
 </center>
 
 Un sistema de este tipo resulta mucho más complicado de resolver y se requiere utilizar de la ecuación de Euler-Lagrange aplicada en el Lagrangiano.
@@ -286,11 +309,15 @@ $$
 \end{aligned}
 $$
 <center>
+
 ![ángulo 1 vs potencial](Anim/ángulo1-potencial.gif){height=300px}
+
 </center>
 
 <center>
+
 ![ángulo 2 vs potencial](Anim/ángulo2-potencial.gif){height=300px}
+
 </center>
 
 Para encontrar la energía cinética necesitamos primero los cuadrados de las velocidades $v_1$ y $v_2$:
@@ -352,13 +379,17 @@ $$
 Las ecuaciones de Euler-Lagrange para $\theta_1$ y $\theta_2$ pueden ser resueltas numéricamente para poder modelar este péndulo doble. Es importante resaltar que al ir complicando poco a poco el problema, ahora nos encontramos ante algo sumamente complicado de resolver.
 
 <center>
+
 ![ángulo 1(verde) vs ángulo 2(rojo)](Anim/ángulo1vs2.gif){height=300px}
+
 </center>
 
 El péndulo doble se comporta de una manera radicalmente diferente ante cambios muy pequeños en sus condiciones iniciales. Dicho comportamiento se denomina como caótico y lo podremos apreciar en las figuras a continuación:
 
 <center>
+
 ![Péndulo 1](Anim/doble-1.gif){height=300px} ![Péndulo 2](Anim/doble-2.gif){height=300px}
+
 </center>
 
 # Referencias
