@@ -5,16 +5,21 @@ author:
   - Cabasso Kassin Eliahu - 
   - Lango Baltazar Fernando - 181055
 date: "`r format(Sys.time(), '%d/%m/%Y')`"
-output:
-  #rmdformats::material
-  prettydoc::html_pretty:
-    theme: cayman
-    highlight: github
+output: 
+  #rmdformats::robobook
+  rmdformats::material:
+    gallery: True
+    use_bookdown: True
+    lightbox: True
+    thumbnails: True
+  #prettydoc::html_pretty
+    #theme: cayman
+    #toc: True
+    #highlight: github
     math: katex
     number_sections: True
     fig_caption: True
-    toc: True 
-    self_contained: False
+    self_contained: True
 toc-title: Contenido     
 bibliography: citations.bib
 csl: apa.csl 
@@ -25,7 +30,9 @@ nocite: '@*'
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-*Falta escribir una introducción* Antes de estudiar el péndulo doble comencemos por estudiar el péndulo simple. Sabemos que en la vida real los sistemas mecánicos son sumamente complicados
+# Introducción
+
+Transformar problemas del mundo real al mundo matemático suele ser un gran reto. Antes de intentar plantear el problema tal como es en la realidad, primero deben realizarse una serie de supuestos simplificadores para poder llegar a la solución poco a poco. Es por ello que antes de estudiar el péndulo doble comenzaremos por estudiar el péndulo simple sin ninguna fuerza externa y poco a poco iremos levantando algunos supuestos. 
 
 # Péndulo simple
 
@@ -35,7 +42,7 @@ Es evidente que en cualquier sistema en movimiento, la fuerza de fricción juega
 
 Denominamos ideal este ejemplo por el hecho de que sucede, para nuestra conveniencia, en un mundo utópico que nos facilitará representar el péndulo de una manera sencilla a pesar de que se encuentra sumamente lejos de la realidad.
 
-Podemos observar este péndulo en la *Figure 1*, el cual se compone de:
+Podemos observar este péndulo en la siguiente figura, el cual se compone de:
 
 - Una vara rígida de longitud $l=1 \ \text{m}$ (sin masa).
 - Una bola al final de la vara con masa $m =1 \ \text{kg}$.
@@ -45,7 +52,7 @@ Podemos observar este péndulo en la *Figure 1*, el cual se compone de:
 
 <center>
 
-![Boyce](Img/péndulo-ideal.jpg){height=300px}
+![Péndulo simple](Img/péndulo-ideal.jpg){height=300px}
 
 </center>
 
@@ -117,7 +124,7 @@ Si graficamos para cada nivel de energía podemos esbozar el retrato fase:
 
 <center>
 
-![Boyce](Img/Potencial-retrato-ideal.jpg){height=300px}
+![Niveles de energía y retrato fase](Img/Potencial-retrato-ideal.jpg){height=300px}
 
 </center>
 
@@ -253,7 +260,7 @@ $$
 
 <center>
 
-![Blanchard](Img/Ceroclinas-fricción.jpg){height=300px}
+![Ceroclinas péndulo con fricción](Img/Ceroclinas-fricción.jpg){height=300px}
 
 </center>
 
@@ -262,7 +269,7 @@ Utilizando la información que obtuvimos de los puntos de equilibrio y las ceroc
 
 <center>
 
-![Blanchard](Img/Retrato-fricción.jpg){height=300px}
+![Retrato fase del péndulo con fricción](Img/Retrato-fricción.jpg){height=300px}
 
 </center>
 
@@ -275,7 +282,7 @@ Consideremos ahora un péndulo que está unido a otro péndulo. Tenemos una masa
 
 <center>
 
-![Wiggins](Img/Péndulo-doble.jpg){height=300px}
+![Péndulo doble](Img/Péndulo-doble.jpg){height=300px}
 
 </center>
 
@@ -310,13 +317,13 @@ $$
 $$
 <center>
 
-![ángulo 1 vs potencial](Anim/ángulo1-potencial.gif){height=300px}
+![Ángulo 1 vs potencial](Anim/ángulo1-potencial.gif){height=300px}
 
 </center>
 
 <center>
 
-![ángulo 2 vs potencial](Anim/ángulo2-potencial.gif){height=300px}
+![Ángulo 2 vs potencial](Anim/ángulo2-potencial.gif){height=300px}
 
 </center>
 
@@ -380,7 +387,7 @@ Las ecuaciones de Euler-Lagrange para $\theta_1$ y $\theta_2$ pueden ser resuelt
 
 <center>
 
-![ángulo 1(verde) vs ángulo 2(rojo)](Anim/ángulo1vs2.gif){height=300px}
+![Ángulo 1(verde) vs ángulo 2(rojo)](Anim/ángulo1vs2.gif){height=300px}
 
 </center>
 
@@ -391,6 +398,7 @@ El péndulo doble se comporta de una manera radicalmente diferente ante cambios 
 ![Péndulo 1](Anim/doble-1.gif){height=300px} ![Péndulo 2](Anim/doble-2.gif){height=300px}
 
 </center>
+
 
 # Referencias
 
