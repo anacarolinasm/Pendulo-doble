@@ -2,8 +2,9 @@
 title: "Péndulo doble"
 subtitle: "Sistemas Dinámicos II"
 author: 
-  - Cabasso Kassin Eliahu - 178906
+  - Cabasso Kassin Eliahu - 
   - Lango Baltazar Fernando - 181055
+  - Ana Carolina Sandoval Mejía - 152808
 date: "`r format(Sys.time(), '%d/%m/%Y')`"
 output: 
   #rmdformats::robobook
@@ -31,6 +32,21 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introducción
+
+Un principio general de la teoría del caos establece que incluso los sistemas simples pueden mostrar dinámicas complejas. Los elementos básicos para el caos es que el sistema tenga al menos tres variables dinámicas y algo de no-linealidad.
+
+Un ejemplo clásico del caos es el péndulo amortiguado impulsado. Aquí las tres variables dinámicas son el ángulo, la velocidad angular y la fase del accionamiento sinusoidal. La no-linealidad es provista por la función coseno en la energía potencial.
+
+\subsection{Un poco de Historia}
+Después de la invención del Cálculo por parte de Newton y Leibniz, la primera ola de practicantes del cálculo se enfocaron en problemas estáticos o restringidos. La siguiente generación de practicantes (Euler, los hermanos Bernoulli y D'Alembert) se enfocaron en encontrar las ecuaciones de movimiento de los sistemas dinámicos. Uno de los sistemas más sencillos, que produjo las primeras ecuaciones de movimiento, fue el péndulo doble.
+
+El péndulo doble, en su forma más sencilla, es una masa en una barra rígida sin masa, unida a otra masa en otra barra rígida sin masa.
+
+![El péndulo doble por Daniel Bernoulli, Johann Bernoulli y D'Alembert. Este sistema de dos masas jugó un rol central en el desarrollo histórico temprano de las ecuaciones dinámicas de movimiento](Img/doublepenfigs.jpg){height=300px}
+
+Daniel Bernoulli fue el primero en estudiar el péndulo doble, publicando un paper sobre el tema en 1733 en la Academia de San Petersburgo. Como era físico primero y luego matemático, hizo experimentos con masas atadas a cuerdas en un intento por entender el comportamiento cualitativo y cuantitativo del sistema de dos masas.
+
+Él reconoció que cualquier movimiento general del péndulo doble es una combinación de las mociones simétricas y antisimétricas fundamentales. También es la primer declaración de una combinación de movimientos que usaría posteriormente en 1753 para expresar el principio de superposición por primera vez. La superposición es uno de los principios rectores de los sistemas físicos lineales. Además, proporciona un medio para la solución de ecuaciones diferenciales y actualmente se utiliza en ciencias cuánticas. 
 
 Transformar problemas del mundo real al mundo matemático suele ser un gran reto. Antes de intentar plantear el problema tal como es en la realidad, primero deben realizarse una serie de supuestos simplificadores para poder llegar a la solución poco a poco. Es por ello que antes de estudiar el péndulo doble comenzaremos por estudiar el péndulo simple sin ninguna fuerza externa y poco a poco iremos levantando algunos supuestos. 
 
@@ -269,7 +285,7 @@ Utilizando la información que obtuvimos de los puntos de equilibrio y las ceroc
 
 <center>
 
-![Retrato fase del péndulo con fricción](Img/Retrato-fricción.png){height=300px}
+![Retrato fase del péndulo con fricción](Img/Retrato-fricción.jpg){height=300px}
 
 </center>
 
@@ -390,7 +406,7 @@ Las ecuaciones de Euler-Lagrange para $\theta_1$ y $\theta_2$ pueden ser resuelt
 ![Ángulo 1(verde) vs ángulo 2(rojo)](Anim/ángulo1vs2.gif){height=300px}
 
 </center>
-<!--
+
 El péndulo doble se comporta de una manera radicalmente diferente ante cambios muy pequeños en sus condiciones iniciales. Dicho comportamiento se denomina como caótico y lo podremos apreciar en las figuras a continuación:
 
 <center>
@@ -398,20 +414,26 @@ El péndulo doble se comporta de una manera radicalmente diferente ante cambios 
 ![Péndulo 1](Anim/doble-1.gif){height=300px} ![Péndulo 2](Anim/doble-2.gif){height=300px}
 
 </center>
--->
+
 # Conclusión
+Como aprendimos en la introducción, el principio del péndulo doble, que se desarrolló en el sigo XVIII, permitió el estudio de las soluciones a ecuaciones diferenciales. Es decir, este descubrimiento fue un momento crítico para el desarrollo de los Sistemas Dinámicos. Adicionalmente, el péndulo doble se utiliza ampliamente en diversas aplicaciones de modelaje incluyendo Robótica y análisis de locomoción humana.
 
-El péndulo doble, aunque es un sistema que podría parecer simple, en realidad es muy complejo. Se comporta de una manera radicalmente diferente ante cambios muy pequeños en sus condiciones iniciales. Esta sensibilidad ante las condiciones iniciales es lo que se conoce como comportamiento caótico. En la siguiente animación podemos apreciar este comportamiento:
+Además, el péndulo doble nos puede ayudar a entender mejor la Teoría del Caos, ya que como vimos, cambiar ligeramente las condiciones iniciales podría resultar en trayectorias vastamente diferentes. El péndulo doble es uno de los sistemas dinámicos más simples con soluciones caóticas. Una aplicación es la siguiente: podemos ver los terremotos como sistemas caóticos deterministas, donde el ruido se representa por los momentos en que hay sismos. En este caso, sistemas de doble péndulo son usados en el diseño de edificios para aumentar la resistencia sísmica. Aquí, el edificio se usa como el péndulo primario invertido y una masa secundaria se conecta para completar el péndulo doble. Existen muchas aplicaciones para los sistemas caóticos como antropología, ecología, sociología, economía, pandemia, ingenieria, computación, entre muchas otras. La siguiente gráfica muestra la entropía (medida del caos) de un sistema de péndulo doble donde alpha y beta representan razones de cada masa delé péndulo doble.
 
-<center>
+![Ángulo 1 vs potencial](Anim/entropia_pendulo_doble.gif){height=400px}
 
-![Caos](Anim/caos.gif){height=300px}
+Por otro lado, al ser el péndulo doble un sistema sencillo que modela el caos en un sistema determinístico, por lo que este se puede usar como modelo sencillo para entender sistemas caóticos mucho más complejos. Por ejemplo, el péndulo doble se ha utilizado exitosamente como una herramienta de modelaje en Robótica y en Bio-mecánica. Específicamente, se ha utilizado para analizar los aspecos de control de un robot de carro, brazos robóticos flexibles y grúas que se colocan en las orillas de los barcos. En Bio-mecánica este modelo se ha utilizado para analizar las diánmicas de la locomoción de las extremidades humanas y de distintas especies, así como para modelar el swing de golf.
 
-</center>
+Por otro lado, al ser el péndulo doble un sistema sencillo que modela el caos en un sistema determinístico, por lo que este se puede usar como modelo sencillo para entender sistemas caóticos mucho más complejos. Por ejemplo, el péndulo doble se ha utilizado exitosamente como una herramienta de modelaje en Robótica y en Bio-mecánica. Específicamente, se ha utilizado para analizar los aspecos de control de un robot de carro, brazos robóticos flexibles y grúas que se colocan en las orillas de los barcos. En Bio-mecánica este modelo se ha utilizado para analizar las diánmicas de la locomoción de las extremidades humanas y de distintas especies, así como para modelar el swing de golf.
 
-En la figura vemos tres péndulos dobles que inician en condiciones casi idénticas. Sin embargo, con el paso del tiempo, su comportamiento es totalmente distinto.
+A pesar de la creciente popularidad del péndolo doble para aplicaciones de manufactura, todavía falta colección de estos datos y subsequente análisis de estos datos. Esto causa limitaciones en distintas aplicaciones pues muchos diseños comerciales no intentan mazimizar la cantidad de tiempo que el sistema está en movimiento. Esto resulta en una serie de tiempo muy pequeño que consiste de piecas con diferentes comportamientos mecánicos que no pueden ser utilizados para estudiar las abundantes dinámicas subyacientes.
+
+Estas son solo unas pocas de las múltiples aplicaciones que puede tener el péndulo doble, tanto para estudiar los Sistemas Dinámicos en un ambiente académico, como para implementar productos o servicios comerciales que se basan en este principio. Por otro lado, vemos que todavía hay mucho campo por explorar, por ejemplo, hay muchas áreas de oportunidad en la Mecánica Cuántica. En Física, los Sistemas Dinámicos Cuánticos trabajan con los movimientos, energía e intercambios de momentum en sistemas cuyo comportamiento está gobernado por las leyes de la Mecánica Cuántica. Estudiar los Sistemas Dinámicos Cuánticos es muy relevante actualmente pues se puede aplicar en campos como la computación cuántica o la óptima atómica. Recordemos que la Mecánica Cuántica es una teoria fundamental íen la Física, la cual provee una descripcion de las propiediades físicas de la naturaleza en la escala de los átomos y las picuartlas subatcas.
+
 
 # Referencias
 
-
-
+https://galileo-unbound.blog/2020/10/18/the-ups-and-downs-of-the-compound-double-pendulum/
+http://www.physics.smu.edu/fattarus/double_pendulum.html
+https://reader.elsevier.com/reader/sd/pii/S246806722030047X?token=BF78EEF19A00F9619A637B93F7E2C70D578A3DFDF1FF1A08E14FBCB62F4E738EA8EA436BC82E3F8933AE461E4B66ADC7&originRegion=us-east-1&originCreation=20210430195504
+https://en.wikipedia.org/wiki/Quantum_mechanics
