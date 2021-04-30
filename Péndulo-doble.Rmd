@@ -399,6 +399,7 @@ El péndulo doble se comporta de una manera radicalmente diferente ante cambios 
 
 </center>
 
+# Conclusión
 
 # Referencias
 
