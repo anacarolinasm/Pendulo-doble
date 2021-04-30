@@ -2,7 +2,7 @@
 title: "Péndulo doble"
 subtitle: "Sistemas Dinámicos II"
 author: 
-  - Cabasso Kassin Eliahu - 
+  - Cabasso Kassin Eliahu - 178906
   - Lango Baltazar Fernando - 181055
 date: "`r format(Sys.time(), '%d/%m/%Y')`"
 output: 
@@ -269,7 +269,7 @@ Utilizando la información que obtuvimos de los puntos de equilibrio y las ceroc
 
 <center>
 
-![Retrato fase del péndulo con fricción](Img/Retrato-fricción.jpg){height=300px}
+![Retrato fase del péndulo con fricción](Img/Retrato-fricción.png){height=300px}
 
 </center>
 
