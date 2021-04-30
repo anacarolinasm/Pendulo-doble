@@ -390,7 +390,7 @@ Las ecuaciones de Euler-Lagrange para $\theta_1$ y $\theta_2$ pueden ser resuelt
 ![Ángulo 1(verde) vs ángulo 2(rojo)](Anim/ángulo1vs2.gif){height=300px}
 
 </center>
-
+<!--
 El péndulo doble se comporta de una manera radicalmente diferente ante cambios muy pequeños en sus condiciones iniciales. Dicho comportamiento se denomina como caótico y lo podremos apreciar en las figuras a continuación:
 
 <center>
@@ -398,8 +398,14 @@ El péndulo doble se comporta de una manera radicalmente diferente ante cambios 
 ![Péndulo 1](Anim/doble-1.gif){height=300px} ![Péndulo 2](Anim/doble-2.gif){height=300px}
 
 </center>
-
+-->
 # Conclusión
+
+El péndulo doble, aunque es un sistema que podría parecer simple, en realidad es muy complejo. Se comporta de una manera radicalmente diferente ante cambios muy pequeños en sus condiciones iniciales. Esta sensibilidad ante las condiciones iniciales es lo que se conoce como comportamiento caótico. En la siguiente animación podemos apreciar este comportamiento:
+
+![Caos](Anim/caos.gif){height=300px}
+
+En la figura vemos tres péndulos dobles que inician en condiciones casi idénticas. Sin embargo, con el paso del tiempo, su comportamiento es totalmente distinto.
 
 # Referencias
 
